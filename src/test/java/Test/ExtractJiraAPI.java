@@ -29,7 +29,7 @@ public class ExtractJiraAPI {
         Response response = request.get(path);
         Map<String,Map<String, ?>> projectInfo = JsonPath.from(response.asString()).get();
         Map<String, ?> lead=projectInfo.get("lead");
-        Map<String, ?> avatarUrls= (Map<String, ?>) lead.get("avatarUrls");
+        Map<String, String> avatarUrls= (Map<String, String>) lead.get("avatarUrls");
         System.out.println(avatarUrls.get("24x24"));
 
     }

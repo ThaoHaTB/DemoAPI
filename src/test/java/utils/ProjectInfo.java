@@ -47,14 +47,13 @@ public class ProjectInfo implements RequestCapability {
     private void getProjectInfo() {
         String path = "/rest/api/3/project/".concat(projectKey);
         String email = "hathaok37cntt@gmail.com";
-        String apiToken = "ATATT3xFfGF013McSo2jkZNI8FtH3DBlHcPubRYx-bvcWWXsklSbvzHTOcGsqXW2LUSyBaPe3yOOn4ojLOywlHVU6PpWqerEkKjjCvI4aK8Nruwbx07myUHRSdz71wPdOq_9m4oy3imwX5nT-K0Y17kLJtgGHnnrMyg7h8miuDU4RqidxhJvVpA=2FEF35C7";
-        String cred = email.concat(":").concat(apiToken);
-        byte[] encodedCred = Base64.encodeBase64(cred.getBytes());
-        String encodedCredStr = new String(encodedCred);
+        String apiToken = "ATATT3xFfGF0VkaR7p2h09qsLjVo-IMidSrXf4DbUOnXIbW0Bj8EArioSXS-YbKYf8Z26F_zHDVnbTJyte4Cs4VanlFj8GJY9c5eIIU68efzP2xr8uc6PWPIgYbjfpvCLHnpWHGH3wBraJ0whurbnJKr4IsIEf7w_DdJQ3FIRP7W5WOhTQQsmxQ=16413BD0";
+        String encodedCredStr = AuthenticationHender.encodeCredStr(email,apiToken);
 
         RequestSpecification request = given();
         request.baseUri(baseUri);
         request.header(defaultHeader);
+        request.header(acceptJsonHeader);
         request.header(getAuthenticateHeader.apply(encodedCredStr));
         Response response = request.get(path);
         projectInfo = JsonPath.from(response.asString()).get();
