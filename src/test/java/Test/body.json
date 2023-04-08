@@ -1,5 +1,24 @@
+//{
+//  "fields": {
+//    "summary": "Form Jira API",
+//    "project": {
+//      "key": "RL"
+//    },
+//    "issuetype": {
+//      "id": "10001"
+//    }
+//  }
+//}
+
 {
-  "clientName": "Tester",
-  "clientEmail": "demo@gmail.com"
+  "field": {
+    "project": {
+      "key": "RL"
+    },
+    "issueType": {
+      "id": "10001"
+    },
+    "summary": "This is my summary"
+  }
 }
 

@@ -4,14 +4,11 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import model.RequestCapability;
-import org.apache.commons.codec.binary.Base64;
 
 import java.util.List;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
-import static model.RequestCapability.defaultHeader;
-import static model.RequestCapability.getAuthenticateHeader;
 
 public class ProjectInfo implements RequestCapability {
     private String baseUri;
@@ -47,7 +44,7 @@ public class ProjectInfo implements RequestCapability {
     private void getProjectInfo() {
         String path = "/rest/api/3/project/".concat(projectKey);
         String email = "hathaok37cntt@gmail.com";
-        String apiToken = "ATATT3xFfGF0VkaR7p2h09qsLjVo-IMidSrXf4DbUOnXIbW0Bj8EArioSXS-YbKYf8Z26F_zHDVnbTJyte4Cs4VanlFj8GJY9c5eIIU68efzP2xr8uc6PWPIgYbjfpvCLHnpWHGH3wBraJ0whurbnJKr4IsIEf7w_DdJQ3FIRP7W5WOhTQQsmxQ=16413BD0";
+        String apiToken = "ATATT3xFfGF0fIbPT5nou6_t6ZGnGBKRooQQqIgVYntAcus9xljESd274XOhSThfyX-u-ZeVtM2HpiLNHGn-VwlnByfBHtq9sYd8F3FDc9mZASWE68ck0g0MoTgy8Zl6sV7n-NEA_4Bf407GWFP0VaWIkbl2n3kcR5C4Z8IrcVJP4sjOG-FZlrw=9199FCBF";
         String encodedCredStr = AuthenticationHender.encodeCredStr(email,apiToken);
 
         RequestSpecification request = given();
