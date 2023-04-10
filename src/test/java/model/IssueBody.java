@@ -4,9 +4,11 @@ import com.google.gson.Gson;
 
 public class IssueBody {
     private Fields fields;
-
     public IssueBody(Fields fields) {
         this.fields = fields;
+    }
+    public Fields getFields() {
+        return fields;
     }
 
     public static class Fields {

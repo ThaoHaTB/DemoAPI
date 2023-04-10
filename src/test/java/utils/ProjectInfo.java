@@ -3,6 +3,7 @@ package utils;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import model.GlobalConstants;
 import model.RequestCapability;
 
 import java.util.List;
@@ -43,10 +44,7 @@ public class ProjectInfo implements RequestCapability {
 
     private void getProjectInfo() {
         String path = "/rest/api/3/project/".concat(projectKey);
-        String email = "hathaok37cntt@gmail.com";
-        String apiToken = "ATATT3xFfGF0Tn4pFCz0f3YNaIC2zA7AkieSV9F9_fLnHtn6v8Z41DTMc19w_ImJl8pvhKhwTshWK6ryMyMnGcdrA7siE9HlVScDCGWWj9LhywVMABBbW27dgpdG91A8UWjhrSbkLmx4vB75VeUxV3F2MKObspxHojMtPHwSN0EPSe6Cka_wDPA=F52D7775";
-        String encodedCredStr = AuthenticationHender.encodeCredStr(email,apiToken);
-
+        String encodedCredStr = AuthenticationHender.encodeCredStr(GlobalConstants.EMAIL,GlobalConstants.API_TOKEN);
         RequestSpecification request = given();
         request.baseUri(baseUri);
         request.header(defaultHeader);
@@ -54,6 +52,5 @@ public class ProjectInfo implements RequestCapability {
         request.header(getAuthenticateHeader.apply(encodedCredStr));
         Response response = request.get(path);
         projectInfo = JsonPath.from(response.asString()).get();
-
     }
 }
