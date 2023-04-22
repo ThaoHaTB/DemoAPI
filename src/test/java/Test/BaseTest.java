@@ -28,7 +28,6 @@ public class BaseTest implements RequestCapability {
             throw new RuntimeException("Please support base URL");
         }
         System.out.println(baseUriEnv);
-        baseUri = URLEncoder.encode(baseUri);
     }
 
     @BeforeTest
