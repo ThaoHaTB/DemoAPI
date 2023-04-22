@@ -17,12 +17,7 @@ public class BaseTest implements RequestCapability {
     @BeforeSuite
     public void beforeSuite() {
         encodedCredStr = AuthenticationHender.encodeCredStr(EMAIL, API_TOKEN);
-        baseUri = "https://testinglily.atlassian.net";
         projectKey = "RL";
-    }
-
-    @BeforeTest
-    public void beforeTest() {
         String baseUriEnv = System.getProperty("baseUri");
         if (baseUriEnv != null) {
             baseUri = baseUriEnv;
@@ -31,6 +26,10 @@ public class BaseTest implements RequestCapability {
             throw new RuntimeException("Please support base URL");
         }
         System.out.println(baseUriEnv);
+    }
+
+    @BeforeTest
+    public void beforeTest() {
         request = given();
         request.baseUri(baseUri);
         request.header(defaultHeader);
