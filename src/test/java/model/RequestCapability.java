@@ -6,7 +6,7 @@ import java.util.function.Function;
 
 public interface RequestCapability {
     public static final String EMAIL = "hathaok37cntt@gmail.com";
-    public static final String API_TOKEN = "ATATT3xFfGF0OM80BlOdfs1smnkY8tVVKZnzfA-Ai4m8wy8Ade7jfq9wWvKYFEej8E824bPwXiQ3WmHeB6DOnboeLVOOeD1d17UmLd_dHm0qhjTrIiskP4C2g92vvdbjOMCJkXwXyRFkNABJA63KDXW4cGT-fUL2KyWChaN3bro4ICPOf7mOnlE=A414A57E";
+    public static final String API_TOKEN = "ATATT3xFfGF0UKQ8_7ZgFtknWKQoCiVoMpmhRwmmJAnBrt0efBYylhSDLb4XETRcl-aVikelHta-Tvy3ceHb8_UtLpS7JaSGxFGyqJwRA_LtYYYlTNcdwWAhXIepPv3oFNb7_ggwHmKQB4upqcPZ6ZdIWucuc4MgOwuLQYJ9caTC7X3ngOEmPIY=830A2588";
     Header defaultHeader = new Header("Content-type", "application/json;charset=UTF-8");
     Header acceptJsonHeader=new Header("Accept","application/json");
 
