@@ -6,6 +6,8 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import utils.AuthenticationHender;
 
+import java.net.URLEncoder;
+
 import static io.restassured.RestAssured.given;
 
 public class BaseTest implements RequestCapability {
@@ -26,6 +28,7 @@ public class BaseTest implements RequestCapability {
             throw new RuntimeException("Please support base URL");
         }
         System.out.println(baseUriEnv);
+        baseUri = URLEncoder.encode(baseUri);
     }
 
     @BeforeTest
