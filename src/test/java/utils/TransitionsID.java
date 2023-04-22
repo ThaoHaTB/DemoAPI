@@ -3,10 +3,8 @@ package utils;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import model.GlobalConstants;
 import model.RequestCapability;
 
-import javax.lang.model.element.NestingKind;
 import java.util.List;
 import java.util.Map;
 
@@ -23,7 +21,7 @@ public class TransitionsID implements RequestCapability {
 
     public String getTransitionsID(String transName){
         String transID = null;
-        String encodedCredStr = AuthenticationHender.encodeCredStr(GlobalConstants.EMAIL, GlobalConstants.API_TOKEN);
+        String encodedCredStr = AuthenticationHender.encodeCredStr(EMAIL,API_TOKEN);
         String getIssueTransitions="/rest/api/3/issue/"+issueKey+"/transitions";
         RequestSpecification request=given();
         request.baseUri(baseUri);

@@ -1,7 +1,5 @@
 package model;
 
-import com.google.gson.Gson;
-
 public class IssueBody {
     private Fields fields;
     public IssueBody(Fields fields) {
